@@ -1,0 +1,1 @@
+select id, ip, user_msg, bot_msg, time, res_type, client_id from `[el]#moca_prefix#chat_logs` where bot_id = %s;

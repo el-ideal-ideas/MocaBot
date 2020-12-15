@@ -1,0 +1,119 @@
+"""
+Requirements
+------------
+mypy
+mdv
+brotli
+cchardet
+aiodns
+uvloop  # don't support windows.
+ujson
+pytz
+tzlocal
+async_lru
+python-magic
+aioredis
+PyMySQL==0.9.2
+aiomysql
+aiosmtplib
+GitPython
+requests
+aiohttp
+aiofiles
+setproctitle
+psutil
+pycryptodome
+python-dotenv
+orjson
+simplejson
+python-rapidjson
+ulid-py
+shortuuid
+async-timeout
+timeout-decorator
+retry-decorator
+aiojobs
+janus
+Benchmarker
+cloudpickle
+mycli
+speedtest-cli
+ipython
+litecli
+colorama
+typer
+redis
+toolz
+cytoolz
+pygments
+Faker
+twilio
+plyvel
+prettytable
+itsdangerous
+sanic
+sanic-plugins-framework
+sympy
+tweepy
+janome
+Pillow
+"""
+
+REQUIREMENTS = [
+    "mypy",
+    "mdv",
+    "brotli",
+    "cchardet",
+    "aiodns",
+    "uvloop",  # uvloop don't support windows.
+    "ujson",
+    "pytz",
+    "tzlocal",
+    "async_lru",
+    "python-magic",
+    "aioredis",
+    "PyMySQL==0.9.2",
+    "aiomysql",
+    "aiosmtplib",
+    "GitPython",
+    "requests",
+    "aiohttp",
+    "aiofiles",
+    "setproctitle",
+    "psutil",
+    "pycryptodome",
+    "python-dotenv",
+    "orjson",
+    "simplejson",
+    "python-rapidjson",
+    "ulid-py",
+    "shortuuid",
+    "async-timeout",
+    "timeout-decorator",
+    "retry-decorator",
+    "aiojobs",
+    "janus",
+    "Benchmarker",
+    "cloudpickle",
+    "mycli",
+    "speedtest-cli",
+    "ipython",
+    "litecli",
+    "colorama",
+    "typer",
+    "redis",
+    "toolz",
+    "cytoolz",
+    "pygments",
+    "Faker",
+    "twilio",
+    "plyvel",
+    "prettytable",
+    "itsdangerous",
+    "sanic",
+    "sanic-plugins-framework",
+    "sympy",
+    "tweepy",
+    "janome",
+    "Pillow",
+]

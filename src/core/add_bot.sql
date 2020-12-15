@@ -1,0 +1,1 @@
+insert into `[el]#moca_prefix#bots` (bot_name) values (%s);

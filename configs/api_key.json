@@ -1,0 +1,15 @@
+[
+  {
+    "key": "mochimochi",
+    "status": true,
+    "allowed_path": ["/"],
+    "required": {
+      "headers": {},
+      "args": {}
+    },
+    "ip": "*",
+    "rate": "60 per second",
+    "delay": 0,
+    "info": "You can write any information."
+  }
+]

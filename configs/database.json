@@ -1,0 +1,13 @@
+{
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "mochimochi",
+    "database": "moca_system",
+    "prefix": "moca_bot_",
+    "force_sync": false,
+    "min_size": 1,
+    "max_size": 10
+  }
+}

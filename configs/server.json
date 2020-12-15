@@ -1,0 +1,28 @@
+{
+  "address": {
+    "host": "0.0.0.0",
+    "port": 5992,
+    "unix": null,
+    "use_ipv6": false
+  },
+  "ssl": {
+    "cert": null,
+    "key": null
+  },
+  "debug": false,
+  "access_log": false,
+  "log_level": 20,
+  "workers": 0,
+  "auto_reload": false,
+  "backlog": 100,
+  "headers": {},
+  "access_control_allowed_credentials": true,
+  "access_control_allowed_origins": ["https://localhost", "http://localhost", "https://127.0.0.1", "http://127.0.0.1"],
+  "access_control_allowed_methods": ["GET", "HEAD", "POST", "OPTIONS", "PUT", "PATCH", "DELETE"],
+  "access_control_allow_headers": "*",
+  "access_control_max_age": 600,
+  "access_control_expose_headers": "*",
+  "stream_large_files": false,
+  "rate_limiter_redis_storage": null,
+  "pyjs_secret": null
+}

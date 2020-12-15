@@ -1,0 +1,1 @@
+select id, text from `[el]#moca_prefix#bot_dict` where bot_id = %s;
