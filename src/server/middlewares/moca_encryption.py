@@ -16,8 +16,8 @@ from ... import core
 
 # -- Init --------------------------------------------------------------------------
 
-if not isinstance(core.SERVER_CONFIG['key']['pyjs_secret'], str) \
-        or len(core.SERVER_CONFIG['key']['pyjs_secret']) != 16:
+if not isinstance(core.SERVER_CONFIG['pyjs_secret'], str) \
+        or len(core.SERVER_CONFIG['pyjs_secret']) != 16:
     mzk.print_error('pyjs_secret config must be a string of 16 characters.')
     mzk.sys_exit(1)
 
@@ -33,7 +33,7 @@ class EncryptionPlugin(SanicPlugin):
 
 encryption_plugin: EncryptionPlugin = EncryptionPlugin()
 
-PYJS_SECRET = core.SERVER_CONFIG['key']['pyjs_secret'].encode()
+PYJS_SECRET = core.SERVER_CONFIG['pyjs_secret'].encode()
 
 
 @encryption_plugin.middleware(priority=1, attach_to='request', relative='pre')
