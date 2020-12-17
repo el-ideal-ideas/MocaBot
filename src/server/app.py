@@ -139,9 +139,9 @@ async def before_server_start(app_: Sanic, loop):
     app_.bots = {}
 
     def reload_bot(the_updated_key, old_value, new_value, *args, **kwargs) -> None:
+        application = kwargs['app']
         for bot_dir in core.STORAGE_DIR.iterdir():
             if bot_dir.is_dir():
-                application = kwargs['app']
                 try:
                     core.cursor.execute(core.ADD_BOT_QUERY, (bot_dir.name,))
                     core.mysql.commit()
