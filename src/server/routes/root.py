@@ -83,7 +83,7 @@ async def study(request: Request) -> HTTPResponse:
         request,
         ('name|n', str, None, {'max_length': 32}),
         ('message|msg|m', str, None, {'max_length': 512}),
-        ('message_list|msg_list', list, None, {'max_length': 1024}),
+        ('message_list|msg_list', list, None, {'max_length': 8192}),
     )
     if name is None:
         raise Forbidden('name parameter format error.')
