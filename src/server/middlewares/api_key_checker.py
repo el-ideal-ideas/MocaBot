@@ -4,6 +4,7 @@ from sanic.request import Request
 from sanic.exceptions import Forbidden, abort
 from limits import parse_many
 from asyncio import sleep
+from sanic.response import text
 from ... import moca_modules as mzk
 
 # -------------------------------------------------------------------------- Imports --
@@ -13,6 +14,8 @@ from ... import moca_modules as mzk
 
 async def api_key_checker(request: Request):
     """A api-key filter."""
+    if request.method.upper() == 'OPTIONS':
+        return text('success.')
     if not request.raw_url.startswith(b'/static') and \
             not request.raw_url.startswith(b'/web') and \
             not request.raw_url.startswith(b'/status') and \
