@@ -89,7 +89,7 @@ async def api_key_checker(request: Request):
                 request.app.dict_cache['unknown_api_key'][ip] += 1
             except KeyError:
                 request.app.dict_cache['unknown_api_key'][ip] = 1
-            if request.app.dict_cache['unknown_api_key'][ip] > request.app.system_config.get(
+            if request.app.dict_cache['unknown_api_key'][ip] > request.app.system_config.get_config(
                     'block_ip_when_received_invalid_system_auth', int, 0
             ):
                 request.app.ip_blacklist.append(ip)

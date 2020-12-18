@@ -114,6 +114,7 @@ async def study(request: Request) -> HTTPResponse:
                     if isinstance(msg, str) and len(msg) <= 512:
                         await cur.execute(core.ADD_BOT_DATA_QUERY, (bot_id, msg))
             await con.commit()
+    request.app.flags.set('moca_bot_reload', not request.app.flags.get('moca_bot_reload'))
     return text('success.')
 
 
