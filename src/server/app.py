@@ -151,7 +151,6 @@ async def before_server_start(app_: Sanic, loop):
         application.dict_cache['id'] = {}
         application.dict_cache['name'] = {}
         for info in res:
-            mzk.pp(res)
             application.dict_cache['id'][info[0]] = info[1]
             application.dict_cache['name'][info[1]] = info[0]
 
