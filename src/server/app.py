@@ -142,17 +142,16 @@ async def before_server_start(app_: Sanic, loop):
         application = kwargs['app']
         for bot_dir in core.STORAGE_DIR.iterdir():
             if bot_dir.is_dir():
-                try:
-                    core.cursor.execute(core.ADD_BOT_QUERY, (bot_dir.name,))
-                    core.mysql.commit()
-                except IntegrityError:  # if already exists.
-                    pass
                 application.bots[bot_dir.name] = mzk.MocaBot(bot_dir.name, bot_dir)
-        core.cursor.execute(core.GET_BOTS_QUERY)
-        res = core.cursor.fetchall()
+        con = application.mysql.get_a_new_con()
+        cursor = con.cursor()
+        cursor.execute(core.GET_BOTS_QUERY)
+        res = cursor.fetchall()
+        con.close()
         application.dict_cache['id'] = {}
         application.dict_cache['name'] = {}
         for info in res:
+            mzk.pp(res)
             application.dict_cache['id'][info[0]] = info[1]
             application.dict_cache['name'][info[1]] = info[0]
 

@@ -47,7 +47,7 @@ async def get_bot_list(request: Request) -> HTTPResponse:
 @root.route('/bots', {'GET', 'POST', 'OPTIONS'})
 async def bots(request: Request) -> HTTPResponse:
     check_root_pass(request)
-    res = request.app.mysql.execute_aio(core.GET_BOTS_QUERY)
+    res = await request.app.mysql.execute_aio(core.GET_BOTS_QUERY)
     return json(res)
 
 
