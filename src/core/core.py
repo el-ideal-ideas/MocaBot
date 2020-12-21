@@ -47,6 +47,9 @@ ADD_BOT_DATA_QUERY = mzk.get_str_from_file(Path(__file__).parent.joinpath('add_b
 GET_BOT_DATA_QUERY = mzk.get_str_from_file(Path(__file__).parent.joinpath('get_bot_data.sql')).replace(
     '[el]#moca_prefix#', DB_CONFIG['mysql']['prefix']
 )
+GET_DICT_COUNT_QUERY = mzk.get_str_from_file(Path(__file__).parent.joinpath('get_dict_count.sql')).replace(
+    '[el]#moca_prefix#', DB_CONFIG['mysql']['prefix']
+)
 GET_CHAT_LOGS_QUERY = mzk.get_str_from_file(Path(__file__).parent.joinpath('get_chat_logs.sql')).replace(
     '[el]#moca_prefix#', DB_CONFIG['mysql']['prefix']
 )

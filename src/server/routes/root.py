@@ -1,17 +1,13 @@
 # -- Imports --------------------------------------------------------------------------
 
-from typing import (
-    Tuple
-)
 from sanic import Blueprint
 from sanic.request import Request
 from sanic.response import HTTPResponse, text, json as original_json, file
 from orjson import dumps as orjson_dumps
 from functools import partial
 json = partial(original_json, dumps=orjson_dumps)
-from sanic.exceptions import Forbidden, ServerError
-from time import time
-from pymysql import IntegrityError, MySQLError
+from sanic.exceptions import Forbidden
+from pymysql import IntegrityError
 from ... import moca_modules as mzk
 from ... import core
 from .utils import check_root_pass
@@ -150,6 +146,9 @@ async def dialogue(request: Request) -> HTTPResponse:
     bot_id = request.app.dict_cache['name'].get(name, 'unknown')
     if bot is None:
         raise Forbidden('Unknown bot name.')
+    if message == '[el]#moca_bot_dict_count#':
+        res = await request.app.mysql.execute_aio(core.GET_DICT_COUNT_QUERY, (bot_id,))
+        return json({'res_type': 'system', 'res_content': res[0][0]})
     res_type, res_content = bot.dialogue(message)
     await request.app.mysql.execute_aio(
         core.INSERT_CHAT_LOG_QUERY,

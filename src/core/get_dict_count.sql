@@ -1,0 +1,1 @@
+select count(1) from `[el]#moca_prefix#bot_dict` where bot_id = %s;

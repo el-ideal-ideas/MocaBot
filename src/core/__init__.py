@@ -5,7 +5,8 @@ from warnings import catch_warnings, simplefilter
 from .core import (
     VERSION, TOP_DIR, CONFIG_DIR, LOG_DIR, SRC_DIR, STORAGE_DIR, SYSTEM_CONFIG, SANIC_CONFIG, SERVER_CONFIG,
     IP_BLACKLIST_FILE, API_KEY_FILE, system_config, ip_blacklist, DB_CONFIG, FLAGS_FILE, flags, ADD_BOT_QUERY,
-    ADD_BOT_DATA_QUERY, GET_BOT_DATA_QUERY, INSERT_CHAT_LOG_QUERY, GET_CHAT_LOGS_QUERY, GET_BOTS_QUERY
+    ADD_BOT_DATA_QUERY, GET_BOT_DATA_QUERY, INSERT_CHAT_LOG_QUERY, GET_CHAT_LOGS_QUERY, GET_BOTS_QUERY,
+    GET_DICT_COUNT_QUERY
 )
 from .db import mysql, cursor
 from .. import moca_modules as mzk
