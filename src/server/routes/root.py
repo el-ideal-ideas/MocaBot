@@ -130,7 +130,7 @@ async def show_bot_dict(request: Request) -> HTTPResponse:
     bot_id = request.app.dict_cache['name'].get(name)
     if bot_id is None:
         raise Forbidden('unknown bot name.')
-    res = request.app.mysql.execute_aio(core.GET_BOT_DATA_QUERY, (bot_id,))
+    res = await request.app.mysql.execute_aio(core.GET_BOT_DATA_QUERY, (bot_id,))
     return json(res)
 
 
@@ -171,7 +171,7 @@ async def get_chat_logs(request: Request) -> HTTPResponse:
     bot_id = request.app.dict_cache['name'].get(name)
     if bot_id is None:
         raise Forbidden('unknown bot name.')
-    res = request.app.mysql.execute_aio(core.GET_CHAT_LOGS_QUERY, (bot_id,))
+    res = await request.app.mysql.execute_aio(core.GET_CHAT_LOGS_QUERY, (bot_id,))
     return json([(item[0], item[1], item[2], item[3], str(item[4]), item[5], item[6]) for item in res])
 
 # -------------------------------------------------------------------------- Blueprint --
