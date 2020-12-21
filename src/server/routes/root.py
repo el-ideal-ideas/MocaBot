@@ -148,7 +148,7 @@ async def dialogue(request: Request) -> HTTPResponse:
         raise Forbidden('Unknown bot name.')
     if message == '[el]#moca_bot_dict_count#':
         res = await request.app.mysql.execute_aio(core.GET_DICT_COUNT_QUERY, (bot_id,))
-        return json({'res_type': 'system', 'res_content': res[0][0]})
+        return json({'res_type': 'system', 'res_content': f'学習済みデータ数: {res[0][0]}'})
     res_type, res_content = bot.dialogue(message)
     await request.app.mysql.execute_aio(
         core.INSERT_CHAT_LOG_QUERY,
