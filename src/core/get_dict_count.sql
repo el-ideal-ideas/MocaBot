@@ -1,1 +1,1 @@
-select count(1) from `[el]#moca_prefix#bot_dict` where bot_id = %s;
+select SQL_NO_CACHE count(1) from `[el]#moca_prefix#bot_dict` where bot_id = %s;

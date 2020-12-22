@@ -1,1 +1,1 @@
-select id, text from `[el]#moca_prefix#bot_dict` where bot_id = %s;
+select SQL_NO_CACHE id, text from `[el]#moca_prefix#bot_dict` where bot_id = %s;
